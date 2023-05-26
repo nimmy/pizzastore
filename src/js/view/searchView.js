@@ -2,7 +2,14 @@ import icons from 'url:../../img/icons.svg';
 class searchView {
     #parentEl = document.querySelector('.search');
     #searchDisplay = document.querySelector('.results');
-    _errorMessage = 'No result found with you query';
+    _errorMessage = `<div class="error">
+    <div>
+      <svg>
+        <use href="${icons}#icon-alert-triangle"></use>
+      </svg>
+    </div>
+    <p>No recipes found for your query. Please try again!</p>
+  </div>`;
 
     render(data) {
         this.res = data;
