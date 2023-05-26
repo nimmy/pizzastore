@@ -9,7 +9,8 @@ class searchView {
         console.log('Render ' ,data, 'this.res ' ,this.res);
         const markUp = this.#generateMarkup();
         this.#clearQuery();
-        this.#searchDisplay.insertAdjacentHTML('afterbegin', markUp);
+        this.#searchDisplay.innerHTML = '';
+        this.#searchDisplay.insertAdjacentHTML('beforeend', markUp);
     }
 
     getQuery() {
@@ -33,9 +34,6 @@ class searchView {
     }
 
     #generateMarkup() {
-        // return this.res.map(this._listGenerate).join();
-        const id = window.location.hash.slice(1);
-        console.log(id);
         if (this.res.length) {
             return this.res.map(list => {
                 return `<li class="preview">

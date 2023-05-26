@@ -16,9 +16,7 @@ class Pagination {
     addNextPrevClick(handler) {
         this._parentElement.addEventListener('click', function(e) {
             const ctaClicked = e.target.closest('.btn--inline');
-            console.log(ctaClicked);
             const goToPage = +ctaClicked.dataset.goto;
-            console.log(goToPage);
             handler(goToPage);
         })
     }
@@ -26,7 +24,6 @@ class Pagination {
     _generatorMarkup() {
         const currentPage = this.res.defaultPage;
         const numpages = Math.ceil(this.res.result.length / this.res.resultPagePage);
-        console.log(this.res.defaultPage, ' -- ', numpages, ' @@@ ', this.res.result, '####', this.res.resultPagePage);
 
         if (currentPage === 1 && numpages > 1) {
             return `

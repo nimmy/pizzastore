@@ -5,7 +5,6 @@ class RecipeView {
     #data;
 
     render(data) {
-        console.log(data);
         this.#data = data;
         const markUp = this.#generateMarkup();
         this.#clear();
@@ -32,7 +31,6 @@ class RecipeView {
                 Array.from(ele.attributes).forEach(attr => curEle.setAttribute(attr.name, attr.value));
             }
         })
-        console.log(newElement);
 
 
     }
